@@ -1,4 +1,4 @@
-package api.pojo.user;
+package api.pojo;
 
 public class Response {
     private int code;

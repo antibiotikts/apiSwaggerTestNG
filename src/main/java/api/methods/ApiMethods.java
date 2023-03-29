@@ -28,4 +28,12 @@ public class ApiMethods {
                 .when()
                 .post(path);
     }
+
+    public Response putRequest(Object object, String path, int code) {
+        specifications.installSpecification(apiEndpoint, code);
+        return given()
+                .body(object)
+                .when()
+                .put(path);
+    }
 }

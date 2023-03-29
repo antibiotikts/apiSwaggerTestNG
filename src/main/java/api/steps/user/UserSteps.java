@@ -1,7 +1,7 @@
 package api.steps.user;
 
 import api.methods.ApiMethods;
-import api.pojo.user.Response;
+import api.pojo.Response;
 import api.pojo.user.User;
 import api.steps.BaseStep;
 import org.testng.Assert;
@@ -53,6 +53,4 @@ public class UserSteps extends BaseStep {
         Assert.assertEquals(expectedResponse.getType(), response.getType());
         Assert.assertEquals(expectedResponse.getMessage(), response.getMessage());
     }
-
-
 }

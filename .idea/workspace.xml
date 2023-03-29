@@ -4,27 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0861486e-8901-4954-a5d2-8a963f50b8b4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/api/Specifications.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/api/methods/ApiMethods.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/api/pojo/BasePojo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/api/pojo/user/Response.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/api/pojo/user/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/api/steps/BaseStep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/api/steps/user/UserSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/api/ApiTests.java" afterDir="false" />
+    <list default="true" id="0861486e-8901-4954-a5d2-8a963f50b8b4" name="Changes" comment="Init">
+      <change afterPath="$PROJECT_DIR$/src/main/java/api/pojo/pet/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/api/pojo/pet/Pet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/api/pojo/pet/Tag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/api/steps/pet/PetSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/methods/ApiMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/methods/ApiMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/pojo/user/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/pojo/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/steps/user/UserSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/steps/user/UserSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/api/ApiTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/api/ApiTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +72,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "F:/###JAVA_PROJECT###/Testing/SelenideHotLineFramework",
+    "last_opened_file_path": "F:/###JAVA_PROJECT###/Testing/apiSwaggerTestNG",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
 }]]></component>
@@ -198,6 +187,18 @@
       <option name="presentableId" value="Default" />
       <updated>1679990325167</updated>
     </task>
+    <task id="LOCAL-00001" summary="Init">
+      <created>1680078749762</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680078749762</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Init" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init" />
   </component>
 </project>
