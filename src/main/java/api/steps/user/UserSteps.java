@@ -1,7 +1,7 @@
 package api.steps.user;
 
-import api.methods.ApiMethods;
-import api.pojo.Response;
+import api.generators.UserGenerator;
+import api.pojo.ApiResponse;
 import api.pojo.user.User;
 import api.steps.BaseStep;
 import org.testng.Assert;
@@ -10,47 +10,55 @@ import java.util.Collections;
 import java.util.List;
 
 public class UserSteps extends BaseStep {
-    ApiMethods methods = new ApiMethods(URL);
 
     public void getUserByName() {
-        Response expectedResponse = new Response(1, "error", "User not found");
-        Response response = methods
+        ApiResponse expectedApiResponse = new ApiResponse(1, "error", "User not found");
+        ApiResponse apiResponse = methods
                 .getRequest("user/{username}", "bob", 404)
                 .then().extract()
-                .as(Response.class);
+                .as(ApiResponse.class);
 
-        Assert.assertEquals(expectedResponse.getCode(), response.getCode());
-        Assert.assertEquals(expectedResponse.getType(), response.getType());
-        Assert.assertEquals(expectedResponse.getMessage(), response.getMessage());
+        Assert.assertEquals(expectedApiResponse.getCode(), apiResponse.getCode());
+        Assert.assertEquals(expectedApiResponse.getType(), apiResponse.getType());
+        Assert.assertEquals(expectedApiResponse.getMessage(), apiResponse.getMessage());
     }
 
+    public void getUserByName2() {
+        ApiResponse expectedApiResponse = new ApiResponse(1, "error", "User not found");
+        ApiResponse apiResponse = methods
+                .getRequest("user/{username}", "bob", 404)
+                .then().extract()
+                .as(expectedApiResponse.getClass());
+    }
+
+
     public void postUserWithList() {
-        Response expectedResponse = new Response(200, "unknown", "ok");
-        User user = new User(0, "bobi", "bob", "tesla", "bob@g.com", "ff", "333", 0);
+        ApiResponse expectedApiResponse = new ApiResponse(200, "unknown", "ok");
+        User user = UserGenerator.crateUser();
         List<User> userList = Collections.singletonList(user);
 
-        Response response = methods
+        ApiResponse apiResponse = methods
                 .postRequest(userList, "user/createWithArray", 200)
                 .then().extract()
-                .as(Response.class);
+                .as(ApiResponse.class);
 
-        Assert.assertEquals(expectedResponse.getCode(), response.getCode());
-        Assert.assertEquals(expectedResponse.getType(), response.getType());
-        Assert.assertEquals(expectedResponse.getMessage(), response.getMessage());
+        Assert.assertEquals(expectedApiResponse.getCode(), apiResponse.getCode());
+        Assert.assertEquals(expectedApiResponse.getType(), apiResponse.getType());
+        Assert.assertEquals(expectedApiResponse.getMessage(), apiResponse.getMessage());
     }
 
     public void postUserWithArray() {
-        Response expectedResponse = new Response(200, "unknown", "ok");
-        User user = new User(0, "bobi", "bob", "tesla", "bob@g.com", "ff", "333", 0);
+        ApiResponse expectedApiResponse = new ApiResponse(200, "unknown", "ok");
+        User user = UserGenerator.crateUser();
         User[] users = {user};
 
-        Response response = methods
+        ApiResponse apiResponse = methods
                 .postRequest(users, "user/createWithArray", 200)
                 .then().extract()
-                .as(Response.class);
+                .as(ApiResponse.class);
 
-        Assert.assertEquals(expectedResponse.getCode(), response.getCode());
-        Assert.assertEquals(expectedResponse.getType(), response.getType());
-        Assert.assertEquals(expectedResponse.getMessage(), response.getMessage());
+        Assert.assertEquals(expectedApiResponse.getCode(), apiResponse.getCode());
+        Assert.assertEquals(expectedApiResponse.getType(), apiResponse.getType());
+        Assert.assertEquals(expectedApiResponse.getMessage(), apiResponse.getMessage());
     }
 }

@@ -1,24 +1,24 @@
 package api.steps.pet;
 
-import api.methods.ApiMethods;
-import api.pojo.pet.Category;
+import api.generators.PetGenerator;
+import api.pojo.ApiResponse;
 import api.pojo.pet.Pet;
-import api.pojo.pet.Tag;
 import api.steps.BaseStep;
 import org.testng.Assert;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
 public class PetSteps extends BaseStep {
-    ApiMethods methods = new ApiMethods(URL);
+
+    public void getPetById() {
+        ApiResponse expectedApiResponse = new ApiResponse(1, "error", "Pet not found");
+        ApiResponse apiResponse = methods.getRequest("pet/{petId}", "0", 404).then().extract().as(ApiResponse.class);
+
+        Assert.assertEquals(apiResponse.getCode(), expectedApiResponse.getCode());
+        Assert.assertEquals(apiResponse.getType(), expectedApiResponse.getType());
+        Assert.assertEquals(apiResponse.getMessage(), expectedApiResponse.getMessage());
+    }
 
     public void postPet() {
-        Category category = new Category(0, "dog");
-        ArrayList<Tag> teg = new ArrayList<Tag>(Collections.singletonList(new Tag(0, "str")));
-        ArrayList<String> photoUrls = new ArrayList<String>(Collections.singletonList("qwq"));
-        Pet pet = new Pet(0, category, "doggie", photoUrls, teg, "available" );
-
+        Pet pet = PetGenerator.createPet();
         Pet expectedPet = methods.postRequest(pet, "pet", 200).then().extract().as(Pet.class);
 
         Assert.assertEquals(pet.getCategory().getId(), expectedPet.getCategory().getId());
@@ -31,11 +31,7 @@ public class PetSteps extends BaseStep {
     }
 
     public void putPet() {
-        Category category = new Category(0, "dog");
-        ArrayList<Tag> teg = new ArrayList<Tag>(Collections.singletonList(new Tag(0, "str")));
-        ArrayList<String> photoUrls = new ArrayList<String>(Collections.singletonList("qwq"));
-        Pet pet = new Pet(0, category, "doggie", photoUrls, teg, "available" );
-
+        Pet pet = PetGenerator.createPet();
         Pet expectedPet = methods.putRequest(pet, "pet", 200).then().extract().as(Pet.class);
 
         Assert.assertEquals(pet.getCategory().getId(), expectedPet.getCategory().getId());

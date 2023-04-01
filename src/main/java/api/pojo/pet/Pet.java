@@ -3,12 +3,16 @@ package api.pojo.pet;
 import java.util.ArrayList;
 
 public class Pet {
-    private final long id;
-    private final Category category;
-    private final String name;
-    private final ArrayList<String> photoUrls;
-    private final ArrayList<Tag> tags;
-    private final String status;
+    private  long id;
+    private  Category category;
+    private  String name;
+    private  ArrayList<String> photoUrls;
+    private  ArrayList<Tag> tags;
+    private  String status;
+
+    public Pet() {
+
+    };
 
     public Pet(long id, Category category, String name, ArrayList<String> photoUrls, ArrayList<Tag> tags, String status) {
         this.id = id;

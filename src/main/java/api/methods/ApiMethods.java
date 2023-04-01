@@ -1,6 +1,7 @@
 package api.methods;
 
 import api.Specifications;
+import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
@@ -35,5 +36,13 @@ public class ApiMethods {
                 .body(object)
                 .when()
                 .put(path);
+    }
+
+    public Response postRequest2(Object object, String path, int code) {
+        specifications.installSpecification(apiEndpoint, code);
+        return given()
+                .body(object)
+                .when()
+                .post(path);
     }
 }
