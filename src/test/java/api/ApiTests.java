@@ -12,18 +12,9 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class ApiTests {
-    private final String URL = "https://petstore.swagger.io/v2/";
+public class ApiTests  extends BaseTest {
     UserSteps userSteps = new UserSteps();
     PetSteps petSteps = new PetSteps();
-
-    @BeforeTest
-    public void setUrlAndContentType() {
-        RestAssured.requestSpecification = new RequestSpecBuilder()
-                .setBaseUri(URL)
-                .setContentType(ContentType.JSON)
-                .build();
-    }
 
     @Test public void getUserByNameTest() {
         userSteps.getUserByName();
@@ -56,7 +47,8 @@ public class ApiTests {
         post.checkResponseCode(200).postRequest("pet");
         Pet expectedPet = (Pet) post.getResponse();
 
-        Assert.assertEquals(pet.getName(), expectedPet.getName());
+        pet.assertResponse(expectedPet,false, true, true);
+
     }
 
 }
