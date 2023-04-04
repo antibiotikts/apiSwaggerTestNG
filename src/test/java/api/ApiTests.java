@@ -5,11 +5,6 @@ import api.methods.Post;
 import api.pojo.pet.Pet;
 import api.steps.pet.PetSteps;
 import api.steps.user.UserSteps;
-import io.restassured.RestAssured;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.http.ContentType;
-import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class ApiTests  extends BaseTest {
@@ -47,8 +42,6 @@ public class ApiTests  extends BaseTest {
         post.checkResponseCode(200).postRequest("pet");
         Pet expectedPet = (Pet) post.getResponse();
 
-        pet.assertResponse(expectedPet,false, true, true);
-
+        pet.assertResponse(expectedPet,false, true, true, true);
     }
-
 }

@@ -2,14 +2,13 @@ package api.methods;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.ResponseSpecBuilder;
-import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 
 public class Post {
 
-    private Object request;
-    private Object response;
+    private final Object request;
+    private  Object response;
 
     public Post(Object request, Object response) {
         this.request = request;

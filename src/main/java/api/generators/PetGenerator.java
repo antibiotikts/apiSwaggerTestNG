@@ -13,6 +13,7 @@ public class PetGenerator {
         Category category = new Category(0, "dog");
         ArrayList<Tag> teg = new ArrayList<Tag>(Collections.singletonList(new Tag(0, "str")));
         ArrayList<String> photoUrls = new ArrayList<String>(Collections.singletonList("qwq"));
+        photoUrls.add("fdfd");
         return new Pet(0, category, "doggie", photoUrls, teg, "available" );
     }
 }

@@ -50,7 +50,8 @@ public class Pet {
     public void assertResponse(Pet expectedPet,
                                boolean checkPetId,
                                boolean checkCategoryId,
-                               boolean checkCategoryName) {
+                               boolean checkCategoryName,
+                               boolean checkPhotoUrlList) {
        if (checkPetId) {
            Assert.assertEquals(this.id, expectedPet.getId());
        }
@@ -61,6 +62,12 @@ public class Pet {
 
         if (checkCategoryName) {
             Assert.assertEquals(this.category.getName(), expectedPet.getCategory().getName());
+        }
+
+        if (checkPhotoUrlList) {
+            for(int i=0; i<this.photoUrls.size(); i++) {
+                Assert.assertEquals(this.photoUrls.get(i), expectedPet.getPhotoUrls().get(i));
+            }
         }
     }
 
