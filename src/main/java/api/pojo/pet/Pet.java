@@ -1,10 +1,15 @@
 package api.pojo.pet;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 
 import java.util.ArrayList;
 
 public class Pet {
+
+    private final static Logger logger = LogManager.getLogger(Pet.class);
+
     private  long id;
     private  Category category;
     private  String name;
@@ -21,6 +26,8 @@ public class Pet {
         this.photoUrls = photoUrls;
         this.tags = tags;
         this.status = status;
+
+        logger.info("Create new pet");
     }
 
     public long getId() {
