@@ -8,73 +8,75 @@ import java.util.ArrayList;
 
 public class Pet {
 
-    private final static Logger logger = LogManager.getLogger(Pet.class);
+	private final static Logger logger = LogManager.getLogger(Pet.class);
 
-    private  long id;
-    private  Category category;
-    private  String name;
-    private  ArrayList<String> photoUrls;
-    private  ArrayList<Tag> tags;
-    private  String status;
+	private long id;
+	private Category category;
+	private String name;
+	private ArrayList<String> photoUrls;
+	private ArrayList<Tag> tags;
+	private String status;
 
-    public Pet() {};
+	public Pet() {
 
-    public Pet(long id, Category category, String name, ArrayList<String> photoUrls, ArrayList<Tag> tags, String status) {
-        this.id = id;
-        this.category = category;
-        this.name = name;
-        this.photoUrls = photoUrls;
-        this.tags = tags;
-        this.status = status;
+	}
 
-        logger.info("Create new pet");
-    }
+	public Pet(long id, Category category, String name, ArrayList<String> photoUrls, ArrayList<Tag> tags, String status) {
+		this.id = id;
+		this.category = category;
+		this.name = name;
+		this.photoUrls = photoUrls;
+		this.tags = tags;
+		this.status = status;
 
-    public long getId() {
-        return id;
-    }
+		logger.info("Create new pet");
+	}
 
-    public Category getCategory() {
-        return category;
-    }
+	public long getId() {
+		return id;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public Category getCategory() {
+		return category;
+	}
 
-    public ArrayList<String> getPhotoUrls() {
-        return photoUrls;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public ArrayList<Tag> getTags() {
-        return tags;
-    }
+	public ArrayList<String> getPhotoUrls() {
+		return photoUrls;
+	}
 
-    public String getStatus() {
-        return status;
-    }
+	public ArrayList<Tag> getTags() {
+		return tags;
+	}
 
-    public void assertResponse(Pet expectedPet,
-                               boolean checkPetId,
-                               boolean checkCategoryId,
-                               boolean checkCategoryName,
-                               boolean checkPhotoUrlList) {
-       if (checkPetId) {
-           Assert.assertEquals(this.id, expectedPet.getId());
-       }
+	public String getStatus() {
+		return status;
+	}
 
-       if (checkCategoryId) {
-           Assert.assertEquals(this.category.getId(), expectedPet.getCategory().getId());
-       }
+	public void assertResponse(Pet expectedPet,
+							   boolean checkPetId,
+							   boolean checkCategoryId,
+							   boolean checkCategoryName,
+							   boolean checkPhotoUrlList) {
+		if (checkPetId) {
+			Assert.assertEquals(this.id, expectedPet.getId());
+		}
 
-        if (checkCategoryName) {
-            Assert.assertEquals(this.category.getName(), expectedPet.getCategory().getName());
-        }
+		if (checkCategoryId) {
+			Assert.assertEquals(this.category.getId(), expectedPet.getCategory().getId());
+		}
 
-        if (checkPhotoUrlList) {
-            for(int i=0; i<this.photoUrls.size(); i++) {
-                Assert.assertEquals(this.photoUrls.get(i), expectedPet.getPhotoUrls().get(i));
-            }
-        }
-    }
+		if (checkCategoryName) {
+			Assert.assertEquals(this.category.getName(), expectedPet.getCategory().getName());
+		}
+
+		if (checkPhotoUrlList) {
+			for (int i = 0; i < this.photoUrls.size(); i++) {
+				Assert.assertEquals(this.photoUrls.get(i), expectedPet.getPhotoUrls().get(i));
+			}
+		}
+	}
 }
