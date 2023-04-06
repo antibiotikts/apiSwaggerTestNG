@@ -8,8 +8,6 @@ import api.steps.user.UserSteps;
 import org.testng.annotations.Test;
 
 public class ApiTests  extends BaseTest {
-    UserSteps userSteps = new UserSteps();
-    PetSteps petSteps = new PetSteps();
 
     @Test public void getUserByNameTest() {
         userSteps.getUserByName();
